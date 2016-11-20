@@ -1,0 +1,19 @@
+---
+# http://macappstore.org/google-chrome/	
+- name: install_google_chrome
+  homebrew_cask: name=google-chrome state=present
+
+# - name: chrome_cli
+#   homebrew: install chrome-cli state=present
+
+- name: chrome-devtools
+  homebrew_cask: name=chrome-devtools state=present
+
+- name: chromium
+  homebrew_cask: name=chromium state=present
+
+- name: firefox
+  homebrew_cask: name=firefox state=present
+
+- name: vivaldi
+  homebrew_cask: name=vivaldi state=present

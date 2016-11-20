@@ -1,0 +1,15 @@
+---
+- name: install_alfred
+  homebrew_cask: name=alfred state=present
+- name: install_hyper
+  homebrew_cask: name=hyper state=present  
+- name: Install virtualbox
+  homebrew_cask: name=virtualbox state=present
+# I couldn't make vagrant work automatically; left in place as a future project
+- name: Install vagrant
+  homebrew_cask: name=vagrant state=present
+- name: Install the vagrant-vbguest Vagrant plugin
+  command: vagrant plugin install vagrant-vbguest
+  
+
+  

@@ -1,0 +1,3 @@
+---
+- name: install_electron
+  homebrew_cask: name=electron state=present

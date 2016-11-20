@@ -1,0 +1,3 @@
+---
+- name: install_alfred
+  homebrew: name=mariadb state=present

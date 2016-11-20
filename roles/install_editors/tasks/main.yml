@@ -1,0 +1,14 @@
+---
+- name: install_atom
+  homebrew_cask: name=atom state=present
+
+- name: install_sublime
+  homebrew_cask: name=sublime-text state=present
+
+- name: install_textmate
+  homebrew_cask: name=textmate state=present
+
+- name: install_rmate
+  homebrew: name=rmate state=present
+- name: install_macvim
+  homebrew_cask: name=macvim state=present

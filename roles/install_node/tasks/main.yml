@@ -1,0 +1,6 @@
+---
+- name: install_node
+  homebrew: name=node state=present
+  
+- name: install_nvm
+  homebrew: name=nvm state=present

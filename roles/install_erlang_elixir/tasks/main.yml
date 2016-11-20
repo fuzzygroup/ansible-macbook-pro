@@ -1,0 +1,2 @@
+- name: Install erlang
+  homebrew: name=erlang state=present

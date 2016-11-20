@@ -1,0 +1,3 @@
+---
+- name: install_iterm
+  homebrew_cask: name=iterm2 state=present

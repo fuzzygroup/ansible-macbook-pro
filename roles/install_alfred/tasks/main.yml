@@ -1,0 +1,35 @@
+---
+- name: install_alfred
+  homebrew_cask: name=alfred state=present
+  
+- name: install_vlc
+  homebrew_cask: name=vlc state=present
+  
+- name: Download Theremin
+  get_url: >
+    url=http://f.nn.lv/ms/l5/29/Theremin.app.zip
+    dest={{ downloads_directory }}/Theremin.app.zip
+- name: Extract Theremin zip archive
+  command: >
+    chdir={{ downloads_directory }}
+    unzip Theremin.app.zip -d Theremin.app
+    creates=Theremin.app
+- name: Copy Theremin.app to Applications directory
+  command: >
+    cp -R {{ downloads_directory }}/Theremin.app/Theremin.app /Applications
+    creates=/Applications/Theremin.app
+  sudo: yes
+- name: Download Dash
+  get_url: >
+    url=http://newyork.kapeli.com/Dash.zip
+    dest={{ downloads_directory }}/Dash.zip
+- name: Extract Dash zip archive
+  command: >
+    chdir={{ downloads_directory }}
+    unzip Dash.zip -d Dash
+    creates=Dash
+- name: Copy Dash.app to Applications directory
+  command: >
+    cp -R {{ downloads_directory }}/Dash/Dash.app /Applications
+    creates=/Applications/Dash.app
+  sudo: yes  

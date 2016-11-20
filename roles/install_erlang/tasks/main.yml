@@ -1,0 +1,2 @@
+- name: Install tree
+  homebrew: name=erlang state=present

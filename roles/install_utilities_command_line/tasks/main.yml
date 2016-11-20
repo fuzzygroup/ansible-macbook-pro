@@ -1,0 +1,51 @@
+---
+- name: Install wget
+  homebrew: name=wget state=present
+
+- name: Install git
+  homebrew: name=git state=present
+  
+- name: configure github email
+  shell: git config --global user.email {{personal_email}}
+
+- name: configure github personal name
+  shell: git config --global user.name "{{personal_name}}"
+
+- name: Install vtop
+  npm: name=vtop state=latest global=yes
+  
+- name: Install htop
+  homebrew: name=htop state=latest 
+
+
+- name: Install reattach-to-user-namespace
+  homebrew: name=reattach-to-user-namespace state=present
+- name: Install mpd
+  homebrew: name=mpd state=present install_options=with-libshout,with-lame,with-flac
+- name: Install lua
+  homebrew: name=lua state=present 
+- name: Install ffmpeg
+  homebrew: name=ffmpeg state=present 
+- name: Install terminal-notifier
+  homebrew: name=terminal-notifier state=present
+  
+- name: Install The Silver Searcher
+  homebrew: name=the_silver_searcher state=present
+  
+- name: Install bundler gem
+  gem: name=bundler state=latest
+  
+- name: Install tree
+  homebrew: name=tree state=present
+
+- name: Install lynx
+  homebrew: name=lynx state=present
+
+# some kind of weird problem here; aborting for now
+# - name: Install s3cmd
+#   become: yes
+#   pip: >
+#     name=s3cmd
+#     state=present
+#     version=1.6.1
+#     extra_args='--install-option="--prefix=/usr/local"'

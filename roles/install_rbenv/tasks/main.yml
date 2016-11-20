@@ -1,0 +1,3 @@
+---
+- name: install_rbenv
+  homebrew: name=rbenv state=present

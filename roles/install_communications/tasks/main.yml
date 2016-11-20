@@ -1,0 +1,6 @@
+---
+- name: install_skype
+  homebrew_cask: name=skype state=present
+
+- name: install_slack
+  homebrew_cask: name=slack state=present

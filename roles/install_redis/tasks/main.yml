@@ -1,0 +1,3 @@
+---
+- name: install_redis
+  homebrew: name=redis state=present
