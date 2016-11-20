@@ -25,6 +25,43 @@ Here's the output of the Ansible playbook command, warts and all:
     TASK [machine_setup : Ensure user known hosts file exists] *********************
     ok: [0.0.0.0]
 
+    TASK [machine_setup : copy each file over that matches the given pattern] ******
+    ok: [0.0.0.0] => (item=/Users/sjohnson/Dropbox/ssh/appdata_aws.pem)
+    ok: [0.0.0.0] => (item=/Users/sjohnson/Dropbox/ssh/fi_nav_sitecrawl.pem)
+    ok: [0.0.0.0] => (item=/Users/sjohnson/Dropbox/ssh/fuzzygroup.pem)
+    ok: [0.0.0.0] => (item=/Users/sjohnson/Dropbox/ssh/interana.pem)
+
+    TASK [machine_setup : chmod 400 all the pem files transferred over so they have the correct permissions for aws] ***
+    changed: [0.0.0.0]
+     [WARNING]: Consider using file module with mode rather than running chmod
+
+    TASK [machine_setup : copy over ssh config file] *******************************
+    ok: [0.0.0.0]
+
+    TASK [machine_setup : Copy private SSH key rsa] ********************************
+    ok: [0.0.0.0]
+
+    TASK [machine_setup : Copy public SSH key rsa] *********************************
+    ok: [0.0.0.0]
+
+    TASK [machine_setup : Copy private SSH key dsa] ********************************
+    changed: [0.0.0.0]
+
+    TASK [machine_setup : Copy public SSH key dsa] *********************************
+    changed: [0.0.0.0]
+
+    TASK [machine_setup : Ensure the user SSH directory exists] ********************
+    ok: [0.0.0.0]
+
+    TASK [machine_setup : Ensure user known hosts file exists] *********************
+    ok: [0.0.0.0]
+
+    TASK [machine_setup : Ensure the Ansible downloads directory exists] ***********
+    ok: [0.0.0.0]
+
+    TASK [machine_setup : Ensure user known hosts file exists] *********************
+    ok: [0.0.0.0]
+
     TASK [install_browsers : install_google_chrome] ********************************
     ok: [0.0.0.0]
 
