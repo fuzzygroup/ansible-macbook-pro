@@ -15,3 +15,31 @@
   copy: >
     src=known_hosts
     dest=/Users/{{ ansible_user_id }}/.ssh/known_hosts
+
+# - name: copy pem files from a Dropbox directory to ~/.ssh
+#   copy: >
+#     src=/Users/{{ ansible_user_id}}/Dropbox/ssh/*.pem
+#     dest=/Users/{{ ansible_user_id}}/.ssh
+    
+- name: copy each file over that matches the given pattern
+  copy: src={{ item }} dest=/Users/{{ ansible_user_id}}/.ssh
+  with_fileglob:
+  - /Users/{{ ansible_user_id}}/Dropbox/ssh/*.pem     
+    
+- name: chmod 400 all the pem files transferred over so they have the correct permissions for aws
+  shell: chmod 400 /Users/{{ ansible_user_id}}/.ssh/*.pem 
+
+- name: copy over ssh config file
+  copy: >
+    src=/Users/{{ ansible_user_id}}/Dropbox/ssh/config
+    dest=/Users/{{ ansible_user_id}}/.ssh
+- name: Copy private SSH key
+  copy: >
+    src=/Users/{{ ansible_user_id }}/Dropbox/ssh/id_rsa
+    dest=/Users/{{ ansible_user_id }}/.ssh/id_rsa
+    mode=0400
+- name: Copy public SSH key
+  copy: >
+    src=/Users/{{ ansible_user_id }}/Dropbox/ssh/id_rsa.pub
+    dest=/Users/{{ ansible_user_id }}/.ssh/id_rsa.pub
+    mode=0444
