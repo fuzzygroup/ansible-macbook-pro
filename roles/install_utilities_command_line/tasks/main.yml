@@ -41,6 +41,15 @@
 - name: Install lynx
   homebrew: name=lynx state=present
 
+- name: Install awscli
+  homebrew: name=awscli state=present
+
+# NOTE - unable to make this work w/o sudo issues on MAC OS SIERRA  
+# - name: Install boto
+#   become: true
+#   pip: name=boto state=present
+
+
 # some kind of weird problem here; aborting for now
 # - name: Install s3cmd
 #   become: yes
