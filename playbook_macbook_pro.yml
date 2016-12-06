@@ -42,7 +42,8 @@
     - {role: install_iterm, tags: iterm}
     - {role: install_maria_db, tags: mysql}
     - {role: install_node, tags: node}
-    - {role: install_rbenv, tags: ruby}
+    #- {role: install_rbenv, tags: ruby}
+    #- {role: install_rvm, tags: rvm}
     - {role: install_redis, tags: redis}
     - {role: install_ruby_build, tags: ruby}
     - {role: install_tmux, tags: tmux}

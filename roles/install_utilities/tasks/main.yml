@@ -10,6 +10,10 @@
   homebrew_cask: name=vagrant state=present
 - name: Install the vagrant-vbguest Vagrant plugin
   command: vagrant plugin install vagrant-vbguest
+- name: install fantastical
+  homebrew_cask: name=fantastical state=present
+- name: install hammerspoon
+  homebrew_cask: name=hammerspoon state=present
   
 
   

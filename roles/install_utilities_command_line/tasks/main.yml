@@ -4,7 +4,7 @@
 
 - name: Install git
   homebrew: name=git state=present
-  
+
 - name: configure github email
   shell: git config --global user.email {{personal_email}}
 
@@ -13,9 +13,9 @@
 
 - name: Install vtop
   npm: name=vtop state=latest global=yes
-  
+
 - name: Install htop
-  homebrew: name=htop state=latest 
+  homebrew: name=htop state=latest
 
 
 - name: Install reattach-to-user-namespace
@@ -23,18 +23,18 @@
 - name: Install mpd
   homebrew: name=mpd state=present install_options=with-libshout,with-lame,with-flac
 - name: Install lua
-  homebrew: name=lua state=present 
+  homebrew: name=lua state=present
 - name: Install ffmpeg
-  homebrew: name=ffmpeg state=present 
+  homebrew: name=ffmpeg state=present
 - name: Install terminal-notifier
   homebrew: name=terminal-notifier state=present
-  
+
 - name: Install The Silver Searcher
   homebrew: name=the_silver_searcher state=present
-  
+
 - name: Install bundler gem
   gem: name=bundler state=latest
-  
+
 - name: Install tree
   homebrew: name=tree state=present
 
@@ -44,7 +44,30 @@
 - name: Install awscli
   homebrew: name=awscli state=present
 
-# NOTE - unable to make this work w/o sudo issues on MAC OS SIERRA  
+- name: install imagemagick
+  homebrew: name=imagemagick state=present
+
+- name: install mongo
+  homebrew: name=mongodb state=present
+
+- name: install phantomjs
+  homebrew: name=phantomjs state=present
+
+- name: install gpg
+  homebrew: name=gpg state=present
+
+
+# - name: install python virtualenv
+#   become: yes
+#   pip: name=virtualenvwrapper state=present
+
+# - name: Install rmagick
+#   homebrew: name=rmagick state=present
+
+
+
+
+# NOTE - unable to make this work w/o sudo issues on MAC OS SIERRA
 # - name: Install boto
 #   become: true
 #   pip: name=boto state=present
