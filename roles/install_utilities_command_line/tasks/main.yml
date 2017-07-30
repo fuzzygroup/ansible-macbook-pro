@@ -17,7 +17,6 @@
 - name: Install htop
   homebrew: name=htop state=latest
 
-
 - name: Install reattach-to-user-namespace
   homebrew: name=reattach-to-user-namespace state=present
 - name: Install mpd
@@ -55,7 +54,11 @@
 
 - name: install gpg
   homebrew: name=gpg state=present
+  
+- name: install lunchy
+  gem: name=lunchy state=present
 
+#manual
 
 # - name: install python virtualenv
 #   become: yes

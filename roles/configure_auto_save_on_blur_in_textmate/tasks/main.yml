@@ -1,0 +1,21 @@
+# nano -w ~/Library/Application\ Support/TextMate/Global.tmProperties
+# Version 1.0 -- Generated content!
+# showInvisibles   = true
+# softTabs         = true
+# softWrap         = true
+# tabSize          = 2
+# saveOnBlur       = true
+#
+# [ source ]
+# showInvisibles   = true
+# softTabs         = true
+# softWrap         = true
+# tabSize          = 2
+#
+# [ source.shell ]
+# softWrap         = true
+#
+# [ source.yaml ]
+# showInvisibles   = true
+# softTabs         = true
+# tabSize          = 2

@@ -1,0 +1,16 @@
+#
+# Reference: https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases
+#            https://gist.github.com/robmiller/6018582
+#
+
+- name: setup git alias co
+  shell: "git config --global alias.co checkout"
+  
+- name: setup git alias br
+  shell: "git config --global alias.br branch"
+  
+- name: setup git alias ci
+  shell: "git config --global alias.ci commit"
+  
+- name: setup git alias st
+  shell: "git config --global alias.st status"

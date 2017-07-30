@@ -1,0 +1,73 @@
+---
+- name: install_yarn
+  #homebrew_cask: name=yarn state=present
+  homebrew: name=yarn state=present
+  
+#Add export PATH="$PATH:`yarn global bin`" to your profile (this may be in your .profile, .bashrc, .zshrc, etc.)
+
+- name: install_shellcheck
+  homebrew: name=shellcheck state=present
+  
+#brew cask install keypad-layout
+- name: install_keypad_layout
+  homebrew_cask: name=keypad-layout state=present
+  
+#    # brew install watchman
+- name: install_watchman
+  homebrew: name=watchman state=present
+
+#brew cask install xquartz
+- name: install_xquartz
+  homebrew_cask: name=xquartz state=present
+  
+#    # brew maxima  
+- name: install_maxima
+  homebrew: name=maxima state=present
+  
+# brew cask install gitter
+- name: install_gitter
+  homebrew_cask: name=gitter state=present
+  
+- name: install_fantastical
+  homebrew_cask: name=fantastical state=present
+  
+- name: install_acorn
+  homebrew_cask: name=acorn state=present
+  
+#  brew cask install enpass
+- name: install enpass
+  homebrew_cask: name=enpass state=present
+  
+# brew cask install keybase
+- name: install keybase
+  homebrew_cask: name=keybase state=present
+
+# brew cask install franz
+- name: install franz
+  homebrew_cask: name=franz state=present
+
+# brew cask install marp
+- name: install marp
+  homebrew_cask: name=marp state=present
+
+# brew cask install marp
+- name: install chatology
+  homebrew_cask: name=chatology state=present
+  
+- name: docker
+  homebrew_cask: name=docker state=present
+  
+- name: macvim
+  homebrew_cask: name=macvim state=present
+  
+- name: sublime-text
+  homebrew_cask: name=sublime-text state=present
+
+- name: transmit
+  homebrew_cask: name=transmit state=present
+  
+  
+
+# brew cask install chatty
+# - name: install chatty
+#   homebrew_cask: name=chatty state=present

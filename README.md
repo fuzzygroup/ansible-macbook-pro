@@ -1,9 +1,30 @@
 # ansible-macbook-pro
 
-This is a git repo designed to configure a 2016 Macbook Pro for the needs of a Ruby / OSS developer.  
+This is a git repo designed to configure a 2016 Macbook Pro for the needs of a Ruby / OSS developer.
+
+I modified this on 7/30/17 to configure a new Hackintosh based on an Intel NUC.  I drew inspiration from several sources including:
+
+* [Jeff Geerling](https://github.com/geerlingguy/mac-dev-playbook)
+* [geetarista](https://github.com/geetarista/mac-ansible)
+
+[Jeff Geerling's readme](https://github.com/geerlingguy/mac-dev-playbook/blob/master/README.md) on this type of thing is really excellent and you should read it.
 
 Here's the [blog post describing it]().
 
+## Not Installed by This
+
+* Tweetbot
+* Wunderlist
+* Deckset
+* Audacity
+* Nylas
+* Twitterific
+* TweetDeck
+
+## Latest Pass
+
+
+## Original Pass
 Here's the output of the Ansible playbook command, warts and all:
 
     Js-MacBook-Pro:ansible-macbook-pro sjohnson$ ansible-playbook -i inventories/hosts playbook_macbook_pro.yml

@@ -1,0 +1,10 @@
+---
+- hosts: all
+  connection: local
+
+  vars_files:
+    - default.config.yml
+
+  tasks:
+    - include: tasks/extra-packages.yml
+      tags: ['extra-packages']

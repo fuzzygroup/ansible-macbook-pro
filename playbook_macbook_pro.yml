@@ -29,6 +29,8 @@
     downloads_directory: /{{ home_directory }}/.ansible/downloads
     personal_email: fuzzygroup@gmail.com
     personal_name: "Scott Johnson"
+  vars_files:
+    - default.config.yml
   gather_facts: true
   roles:
     - {role: machine_setup, tags: machine_setup}
@@ -50,3 +52,36 @@
     - {role: install_iterm, tags: iterm}
     - {role: install_utilities, tags: utilities}
     - {role: install_utilities_command_line, tags: utilities_command_line}
+    - {role: setup_git_aliases, tags: setup_git_aliases}
+    - {role: configure_auto_save_on_blur_in_textmate, tags: textmate}
+    - {role: configure_ansible_cfg_file, tags: ansible}
+    - {role: ansible-role-skype}
+    - {role: wtanaka.slack}
+    #https://github.com/gantsign/ansible-role-visual-studio-code
+    - role: gantsign.visual-studio-code
+      users:
+            - username: sjohnson
+              visual_studio_code_extensions:
+                - streetsidesoftware.code-spell-checker
+                - wholroyd.jinja
+                - donjayamanne.python
+                - rebornix.Ruby
+                - groksrc.ruby
+                - vortizhe.simple-ruby-erb
+                - hjleochen.rails-nav
+              visual_studio_code_settings: {
+                "editor.rulers": [80, 100, 120],
+                "editor.renderWhitespace": true,
+                "files.associations": {
+                  "Vagrantfile": "ruby"
+                }
+              }
+tasks:    
+  - include: tasks/extra-packages.yml
+    tags: ['extra-packages']
+
+#manual
+#https://github.com/geetarista/mac-ansible
+#https://github.com/kaave/ubuntu_setup
+
+#https://superuser.com/questions/433746/is-there-a-fix-for-the-too-many-open-files-in-system-error-on-os-x-10-7-1

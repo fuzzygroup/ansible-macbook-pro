@@ -4,3 +4,7 @@
 
 - name: install_slack
   homebrew_cask: name=slack state=present
+  
+- name: install_telegram
+  homebrew_cask: name=telegram state=present
+  

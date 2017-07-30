@@ -17,3 +17,9 @@
 
 - name: vivaldi
   homebrew_cask: name=vivaldi state=present
+
+- name: brave
+  homebrew_cask: name=brave state=present
+
+- name: opera
+  homebrew_cask: name=opera state=present

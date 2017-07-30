@@ -10,5 +10,6 @@
 
 - name: install_rmate
   homebrew: name=rmate state=present
+  
 - name: install_macvim
   homebrew_cask: name=macvim state=present
