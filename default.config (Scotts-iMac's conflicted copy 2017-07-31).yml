@@ -23,7 +23,7 @@ homebrew_installed_packages:
   - mcrypt
   - nmap
   - node
-  #- nvm
+  - nvm
   - ssh-copy-id
   - cowsay
   - readline

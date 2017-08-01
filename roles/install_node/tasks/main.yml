@@ -6,39 +6,40 @@
 #   homebrew: name=nvm state=present
   
 - name: install_nvm
-  npm: name=nvm state=present
+  npm: name=nvm state=present global=yes #version=
+  
   
 # npm install -g bozon
 - name: install_bozon 
-  npm: name=bozon state=present
+  npm: name=bozon state=present global=yes
 
 # npm install electron --save-dev
 - name: install_electron
-  npm: name=electron state=present
+  npm: name=electron state=present global=yes
 
 #  npm install electron-positioner --save-dev
 - name: install_electron-positioner
-  npm: name=electron-positioner state=present
+  npm: name=electron-positioner state=present global=yes
 
 # npm install electron-devtools-installer
 - name: install_electron-devtools-installer
-  npm: name=electron-devtools-installer state=present
+  npm: name=electron-devtools-installer state=present global=yes
 
 #  npm install bozon --save nconf
 - name: install_nconf 
-  npm: name=bozon state=present
+  npm: name=bozon state=present global=yes
 
 #  npm install -g electron-cli
 - name: install_electron-cli
-  npm: name=electron-cli state=present
+  npm: name=electron-cli state=present global=yes
 
 # npm install -g electron-forge
 - name: install_electron-forge
-  npm: name=electron-forge state=present
+  npm: name=electron-forge state=present global=yes
 
 #  npm install -g electron-packager
 - name: install_electron-packager
-  npm: name=electron-packager state=present
+  npm: name=electron-packager state=present global=yes
   
 #    # npm install -g react-native-cli
 - name: install_react_native_cli
@@ -46,9 +47,9 @@
 
 #    #npm install -g electron-prebuilt
 - name: install_electron-prebuilt
-  npm: name=electron-prebuilt state=present
+  npm: name=electron-prebuilt state=present global=yes
   
 # brew install Caskroom/cask/electron
-- name: brew install Caskroom/cask/electron
-  homebrew_cask: name=Caskroom/cask/electron state=present
+# - name: brew install Caskroom/cask/electron
+#   homebrew_cask: name=Caskroom/cask/electron state=present global=yes
 

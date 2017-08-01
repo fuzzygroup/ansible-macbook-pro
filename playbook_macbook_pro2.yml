@@ -13,7 +13,7 @@
 # You may want to add yourself to the OSX sudoers file before you start this (or put in a password periodically); [http://osxdaily.com/2014/02/06/add-user-sudoers-file-mac/](http://osxdaily.com/2014/02/06/add-user-sudoers-file-mac/)
 # END  DEPENDENCIES
 
-# ansible-playbook -i inventories/hosts playbook_macbook_pro.yml
+# ansible-playbook -i inventories/hosts playbook_macbook_pro2.yml
 #
 
 
@@ -54,8 +54,8 @@
     - {role: install_utilities_command_line, tags: utilities_command_line}
     - {role: setup_git_aliases, tags: setup_git_aliases}
     - {role: configure_auto_save_on_blur_in_textmate, tags: textmate}
-    - {role: configure_ansible_cfg_file, tags: ansible}
-    - {role: ansible-role-skype}
+    #- {role: configure_ansible_cfg_file, tags: ansible}
+    #- {role: ansible-role-skype}
     - {role: wtanaka.slack}
     #https://github.com/gantsign/ansible-role-visual-studio-code
     - role: gantsign.visual-studio-code
@@ -76,9 +76,9 @@
                   "Vagrantfile": "ruby"
                 }
               }
-#tasks:    
-#  - include: tasks/extra-packages.yml
-#    tags: ['extra-packages']
+  tasks:    
+    - include: tasks/extra-packages.yml
+      tags: ['extra-packages']
 
 #manual
 #https://github.com/geetarista/mac-ansible

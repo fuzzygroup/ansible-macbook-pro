@@ -56,9 +56,9 @@
 
 #    #ln -s ~/Dropbox ~/me
 #http://docs.ansible.com/ansible/latest/shell_module.html
-- name: symlink to ~/me
- shell: ln -s ~/Dropbox ~/me
-   args: 
-     executable: /bin/bash
+# - name: symlink to ~/me
+#   shell: ln -s ~/Dropbox ~/me
+#   args:
+#     executable: /bin/bash
    
    
