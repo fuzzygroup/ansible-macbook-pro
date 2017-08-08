@@ -122,6 +122,7 @@ homebrew_cask_apps:
   - hyper
   - hammerspoon
   
+  
 # Install packages from other package managers.
 # Note: You are responsible for making sure the required package managers are
 # installed, eg. through homebrew.
@@ -135,8 +136,8 @@ gem_packages: #[]
   #   version: "~> 1.15.1" # default: N/A
   - tmuxinator
   - bundler
-  - lunchy
-  - launchy
+  #- lunchy
+  #- launchy
   
 npm_packages: #[]
   # - name: webpack

@@ -54,8 +54,8 @@
     - {role: install_utilities_command_line, tags: utilities_command_line}
     - {role: setup_git_aliases, tags: setup_git_aliases}
     - {role: configure_auto_save_on_blur_in_textmate, tags: textmate}
-    - { role: configure_ulimit}
-    - { role: configure_dock}
+    #- { role: configure_ulimit}
+    #- { role: configure_dock}
     #- {role: configure_ansible_cfg_file, tags: ansible}
     #- {role: ansible-role-skype}
     #- {role: wtanaka.slack}
