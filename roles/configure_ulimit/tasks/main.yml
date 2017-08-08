@@ -1,0 +1,12 @@
+# https://superuser.com/questions/827984/open-files-limit-does-not-work-as-before-in-osx-yosemite
+
+- name: Create file
+  copy: >
+    src=limit.maxfiles.plist
+    dest=/Library/LaunchDaemons/limit.maxfiles.plist
+
+- name: Install ulimit changes
+  shell: "sudo chown root:wheel /Library/LaunchDaemons/limit.maxfiles.plist"
+  
+- name: Load ulimit changes
+  shell: "sudo launchctl load -w /Library/LaunchDaemons/limit.maxfiles.plist"
