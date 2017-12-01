@@ -15,13 +15,20 @@
 
 # ansible-playbook -i inventories/hosts playbook_macbook_pro2.yml
 #
+# After install
+# gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
 
+# \curl -sSL https://get.rvm.io | bash -s stable
+# rvm install 2.3.1
+# rvm install 2.4.0
+# rvm install 2.4.1
+# rvm --default use 2.3.1
+#
 
 ---
   
 - hosts: all
   connection: local
-  #become: yes
   # Note - you don't want become at the root layer of the script because homebrew doesn't want root at all
   #. become is used selectively within where it is more of a shell operation and its actually necessary
   #  become: yes
@@ -55,6 +62,8 @@
     - {role: install_utilities_command_line, tags: utilities_command_line}
     - {role: setup_git_aliases, tags: setup_git_aliases}
     - {role: configure_auto_save_on_blur_in_textmate, tags: textmate}
+    #- { role: configure_ulimit}
+    #- { role: configure_dock}
     #- {role: configure_ansible_cfg_file, tags: ansible}
     #- {role: ansible-role-skype}
     #- {role: wtanaka.slack}
