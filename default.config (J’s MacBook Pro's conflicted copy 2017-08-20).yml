@@ -58,6 +58,7 @@ homebrew_installed_packages:
   - mongo
   - phantomjs
   - gpg
+  - dockutil
   
 
 homebrew_taps:
@@ -121,6 +122,7 @@ homebrew_cask_apps:
   - hyper
   - hammerspoon
   
+  
 # Install packages from other package managers.
 # Note: You are responsible for making sure the required package managers are
 # installed, eg. through homebrew.
@@ -136,7 +138,6 @@ gem_packages: #[]
   - bundler
   #- lunchy
   #- launchy
-  
   
 npm_packages: #[]
   # - name: webpack
@@ -160,3 +161,41 @@ pip_packages: []
 
 # Glob pattern to ansible task files to run after all other tasks are finished.
 post_provision_tasks: []
+
+dockitems_to_remove:
+  - Contacts
+  - Notes
+  - FaceTime
+  - iTunes
+  - iBooks
+  - App Store
+  - Calendar
+ 
+dockitems_to_persist:
+  - name: Google Chrome
+    path: "/Applications/Google Chrome.app"
+    pos: 1
+  - name: Firefox
+    path: "/Applications/Firefox.app"
+    pos: 2
+  - name: TextMate
+    path: /Applications/TextMate.app
+    pos: 3
+  - name: Slack
+    path: /Applications/Slack.app
+    pos: 4
+  - name: VirtualBox
+    path: /Applications/VirtualBox.app
+    pos: 5
+  - name: Terminal
+    path: /Applications/Utilities/Terminal.app
+    pos: 6
+  - name: iTerm
+    path: /Applications/Utilities/iTerm.app
+    pos: 7
+  - name: Enpass
+    path: /Applications/Enpass.app
+    pos: 7
+  - name: Skype
+    path: /Applications/Skype.app
+    pos: 8

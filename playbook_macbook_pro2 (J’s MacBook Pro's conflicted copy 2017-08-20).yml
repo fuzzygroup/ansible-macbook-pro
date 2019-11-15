@@ -1,0 +1,97 @@
+#
+# pre-reqs:
+#
+# https://github.com/ricbra/mac-dev-playbook
+#
+#
+#
+# DONE
+# START DEPENDENCIES
+# xcode-select --install
+# ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null ; brew install caskroom/cask/brew-cask 2> /dev/null
+# sudo easy_install pip
+# You may want to add yourself to the OSX sudoers file before you start this (or put in a password periodically); [http://osxdaily.com/2014/02/06/add-user-sudoers-file-mac/](http://osxdaily.com/2014/02/06/add-user-sudoers-file-mac/)
+# END  DEPENDENCIES
+
+# ansible-playbook -i inventories/hosts playbook_macbook_pro2.yml
+#
+# After install
+# gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+
+# \curl -sSL https://get.rvm.io | bash -s stable
+# rvm install 2.3.1
+# rvm install 2.4.0
+# rvm install 2.4.1
+# rvm --default use 2.3.1
+#
+
+---
+  
+- hosts: all
+  connection: local
+  # Note - you don't want become at the root layer of the script because homebrew doesn't want root at all
+  #. become is used selectively within where it is more of a shell operation and its actually necessary
+  #  become: yes
+  vars:
+    home_directory: /Users/{{ ansible_user_id }}
+    downloads_directory: /{{ home_directory }}/.ansible/downloads
+    personal_email: fuzzygroup@gmail.com
+    personal_name: "Scott Johnson"
+  vars_files:
+    - default.config.yml
+  gather_facts: true
+  roles:
+    - {role: machine_setup, tags: machine_setup}
+    - {role: install_browsers, tags: browsers}
+    - {role: install_communications, tags: communications}
+    # note - installing docker is always a pain; perhaps not automate this
+    #- {role: install_docker, tags: docker}
+    - {role: install_editors, tags: editors}
+    - {role: install_electron, tags: electron}
+    - {role: install_erlang_elixir, tags: erlang_elixir}
+    - {role: install_iterm, tags: iterm}
+    - {role: install_maria_db, tags: mysql}
+    - {role: install_node, tags: node}
+    #- {role: install_rbenv, tags: ruby}
+    #- {role: install_rvm, tags: rvm}
+    - {role: install_redis, tags: redis}
+    - {role: install_ruby_build, tags: ruby}
+    - {role: install_tmux, tags: tmux}
+    - {role: install_iterm, tags: iterm}
+    - {role: install_utilities, tags: utilities}
+    - {role: install_utilities_command_line, tags: utilities_command_line}
+    - {role: setup_git_aliases, tags: setup_git_aliases}
+    - {role: configure_auto_save_on_blur_in_textmate, tags: textmate}
+    #- { role: configure_ulimit}
+    #- { role: configure_dock}
+    #- {role: configure_ansible_cfg_file, tags: ansible}
+    #- {role: ansible-role-skype}
+    #- {role: wtanaka.slack}
+    #https://github.com/gantsign/ansible-role-visual-studio-code
+    # - role: gantsign.visual-studio-code
+    #   users:
+    #         - username: sjohnson
+    #           visual_studio_code_extensions:
+    #             - streetsidesoftware.code-spell-checker
+    #             - wholroyd.jinja
+    #             - donjayamanne.python
+    #             - rebornix.Ruby
+    #             - groksrc.ruby
+    #             - vortizhe.simple-ruby-erb
+    #             - hjleochen.rails-nav
+    #           visual_studio_code_settings: {
+    #             "editor.rulers": [80, 100, 120],
+    #             "editor.renderWhitespace": true,
+    #             "files.associations": {
+    #               "Vagrantfile": "ruby"
+    #             }
+    #           }
+  tasks:    
+    - include: tasks/extra-packages.yml
+      tags: ['extra-packages']
+
+#manual
+#https://github.com/geetarista/mac-ansible
+#https://github.com/kaave/ubuntu_setup
+
+#https://superuser.com/questions/433746/is-there-a-fix-for-the-too-many-open-files-in-system-error-on-os-x-10-7-1
